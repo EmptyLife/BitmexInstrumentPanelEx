@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instrument Panel Ex
 // @namespace    namespace001
-// @version      1.0.0
+// @version      1.0.1
 // @description  ...
 // @author       SaintJrOnline
 // @grant        none
@@ -268,9 +268,9 @@ if ( window.top !== window ) {
 const HOST = "www.bitmex.com";
 const HOST_TESTNET = "testnet.bitmex.com";
 
-if ( ![HOST, HOST_TESTNET].includes(location.host) ) {return;}
+if ( ![HOST, HOST_TESTNET].includes(location.hostname) ) {return;}
 
-const IsTestnet = location.host === HOST_TESTNET;
+const IsTestnet = location.hostname === HOST_TESTNET;
 
 const ctx = window[GUID] = {};
 ctx.realtime = new SimpleBitmexRealtime({testnet: IsTestnet});
